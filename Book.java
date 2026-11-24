@@ -1,4 +1,4 @@
-public class Book extends LibraryItem{
+public class Book extends LibraryItem implements Borrowable{
     private String author;
     public Book(String id,String title,String author){
         super(id,title);

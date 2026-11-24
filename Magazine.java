@@ -1,4 +1,4 @@
-public class Magazine extends LibraryItem{
+public class Magazine extends LibraryItem implements Borrowable{
     private String issue;
     public Magazine(String id,String title,String issue){
         super(id,title);
@@ -6,7 +6,7 @@ public class Magazine extends LibraryItem{
     }
     @Override
     public String getType(){
-        return "Book";
+        return "Magazine";
     }
     public String getIssue(){
         return issue;

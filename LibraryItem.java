@@ -11,7 +11,6 @@ public abstract class LibraryItem {
     String getTitle(){
         return title;
     }
-    public abstract double getFineRate();
     public abstract String getType();
     public abstract boolean isBorrowable();
 }
