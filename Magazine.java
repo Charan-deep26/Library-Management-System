@@ -12,7 +12,7 @@ public class Magazine extends LibraryItem implements Borrowable{
         return issue;
     }
     @Override
-    public double getFineRate(){
+    public int getFineRate(){
         return 1;
     }
     @Override 

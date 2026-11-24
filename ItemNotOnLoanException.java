@@ -1,5 +1,5 @@
 
-public class ItemNotOnLoanException extends Exception{
+public class ItemNotOnLoanException extends LibraryException{
     public ItemNotOnLoanException(String message) {
         super(message);
     }

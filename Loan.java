@@ -15,7 +15,8 @@ public class Loan {
     public int getDaysLate(int today){
         return Integer.max(0, today - dueDay);
     }
-    public double calcFine(int today){
+    public int calcFine(int today){
+        //make sure that the item is borrowable before putting it in loan
         return this.getDaysLate(today) * ((Borrowable) item).getFineRate();
     }
     public int getBorrowedDay(){

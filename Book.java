@@ -12,7 +12,7 @@ public class Book extends LibraryItem implements Borrowable{
         return author;
     }
     @Override
-    public double getFineRate(){
+    public int getFineRate(){
         return 2;
     }
     @Override 
