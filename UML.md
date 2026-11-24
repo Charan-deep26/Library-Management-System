@@ -1,33 +1,9 @@
-# <<<<<<< HEAD
-
 # Library Management System
 
 ## UML Class Diagram
 
 ```mermaid
 classDiagram
-    direction TB
-
-    class Borrowable {
-        <<interface>>
-        +getFineRate() double
-    }
-
-    class LibraryItem {
-        <<abstract>>
-        -String id
-        -String title
-    }
-
-    LibraryItem <|-- Book
-    Borrowable <|.. Book
-
-    %% Continue the rest of your UML here
-```
-
-> > > > > > > f4bde2a (Add library management system UML)
-> > > > > > > classDiagram
-
     direction TB
 
     %% =========================
@@ -89,7 +65,6 @@ classDiagram
     %% =========================
 
     class Member {
-        <<abstract>>
         -String id
         -String name
         +Member(String id, String name)
@@ -167,19 +142,12 @@ classDiagram
         +findMember(String id) Member
     }
 
-    %% Library manages its collections
-
     Library "1" o-- "0..*" LibraryItem : inventory
     Library "1" o-- "0..*" Member : registered members
     Library "1" o-- "0..*" Loan : active loans
 
-    %% Each loan has exactly one item and one member
-
     Loan "0..*" --> "1" LibraryItem : item
     Loan "0..*" --> "1" Member : member
-
-    %% An item can have at most one active loan
-    %% A member can have multiple active loans
 
     %% =========================
     %% EXCEPTION HIERARCHY
@@ -257,8 +225,4 @@ classDiagram
     Main ..> Library : uses
     Main ..> LibraryException : catches
 
-# <<<<<<< HEAD
-
-    ```
-
-> > > > > > > f4bde2a (Add library management system UML)
+```
