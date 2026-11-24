@@ -1,3 +1,17 @@
-public class LibraryItem {
-    
+public abstract class LibraryItem {
+    private String id;
+    private String title;
+    public LibraryItem(String id,String title){
+        this.id=id;
+        this.title=title;
+    }
+    String getId(){
+        return id;
+    }
+    String getTitle(){
+        return title;
+    }
+    public abstract double getFineRate();
+    public abstract String getType();
+    public abstract boolean isBorrowable();
 }
