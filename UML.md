@@ -1,4 +1,33 @@
+# <<<<<<< HEAD
+
+# Library Management System
+
+## UML Class Diagram
+
+```mermaid
 classDiagram
+    direction TB
+
+    class Borrowable {
+        <<interface>>
+        +getFineRate() double
+    }
+
+    class LibraryItem {
+        <<abstract>>
+        -String id
+        -String title
+    }
+
+    LibraryItem <|-- Book
+    Borrowable <|.. Book
+
+    %% Continue the rest of your UML here
+```
+
+> > > > > > > f4bde2a (Add library management system UML)
+> > > > > > > classDiagram
+
     direction TB
 
     %% =========================
@@ -227,3 +256,9 @@ classDiagram
 
     Main ..> Library : uses
     Main ..> LibraryException : catches
+
+# <<<<<<< HEAD
+
+    ```
+
+> > > > > > > f4bde2a (Add library management system UML)
