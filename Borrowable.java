@@ -1,3 +1,3 @@
-public class Borrowable{
-    
+public interface Borrowable{
+    public double getFineRate();
 }
