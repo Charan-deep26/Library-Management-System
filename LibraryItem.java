@@ -5,10 +5,10 @@ public abstract class LibraryItem {
         this.id=id;
         this.title=title;
     }
-    String getId(){
+    public String getId(){
         return id;
     }
-    String getTitle(){
+    public String getTitle(){
         return title;
     }
     public abstract String getType();
