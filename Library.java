@@ -6,21 +6,28 @@ public class Library {
     private Map<String,Loan> loans;
     private int today;
     Map<String,Queue<Member>>reservations;
+
     Library(){
         this.items=new HashMap<>();
         this.members=new HashMap<>();
         this.loans=new HashMap<>();
         this.today=0;
     }
+    public int getToday(){
+        return today;
+    }
     public boolean isItemBorrowed(String itemId){
         return loans.containsKey(itemId);
     }
+
     public void addItem(LibraryItem item){
         items.put(item.getId(),item);
     }
+
     public void addMember(Member member){
         members.put(member.getId(),member);
     }
+
     private int countLoans(String memberId){
         int n=0;
         for(Loan l:loans.values()){
@@ -58,8 +65,8 @@ public class Library {
             loans.put(item.getId(),new Loan(item,member,today));
             int due=today+member.getLoanDays();
             return due;
-
     }
+
     public LibraryItem findItem(String id) throws LibraryException{
         LibraryItem item = items.get(id);
         if(item==null){
@@ -67,6 +74,7 @@ public class Library {
         }
         return item;
     }
+
     public Member findMember(String id) throws LibraryException{
         Member member = members.get(id);
         if(member==null){
@@ -88,6 +96,7 @@ public class Library {
             loans.remove(itemId);
             return fine;
     }
+
     public int advanceDays(int days){
         today+=days;
         return today;
@@ -104,6 +113,7 @@ public class Library {
         result.sort(Comparator.comparing(LibraryItem::getTitle));
         return result;
     }
+
     public List<Loan> getLoans(String memberId) throws MemberNotFoundException{
         if(members.get(memberId)==null){ 
             throw new MemberNotFoundException("member "+memberId+" not found");
@@ -141,4 +151,5 @@ public class Library {
         result.sort(Comparator.comparing(LibraryItem::getId));
         return result;
     }
+
 }
