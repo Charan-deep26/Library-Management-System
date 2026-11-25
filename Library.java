@@ -12,7 +12,7 @@ public class Library {
         this.loans=new HashMap<>();
         this.today=0;
     }
-    private boolean isItemBorrowed(String itemId){
+    public boolean isItemBorrowed(String itemId){
         return loans.containsKey(itemId);
     }
     public void addItem(LibraryItem item){
@@ -30,6 +30,18 @@ public class Library {
         }
         return n;
     }
+
+    public String getItemStatus(LibraryItem item) {
+        if (!(item instanceof Borrowable)) {
+            return "NOT_BORROWABLE";
+        }
+        Loan loan = loans.get(item.getId());
+        if (loan != null) {
+            return "ON_LOAN|" + loan.getMember().getId();
+        }
+        return "AVAILABLE";
+    }
+
     public int borrow(String memberId,String ItemId) throws LibraryException{
             Member member=findMember(memberId); //throws member not found
             LibraryItem item=findItem(ItemId); //throws itemnotfound
