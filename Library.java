@@ -136,7 +136,7 @@ public class Library {
             }
         }
         result.sort(
-            Comparator.comparing(Loan::getDueDay)
+            Comparator.comparing((Loan l) -> l.getDaysLate(today))
               .reversed()
               .thenComparing(l -> l.getItem().getId())
             );

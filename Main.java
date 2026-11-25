@@ -65,6 +65,9 @@ public class Main {
                                 loan.getDueDay()
                             );
                         }
+                        if(loans.size()==0){
+                            System.out.println("NONE");
+                        }
                     }
                     catch(LibraryException e){
                         System.out.println("ERROR " + e.getMessage());
@@ -78,6 +81,9 @@ public class Main {
                             item.getTitle()
                         );
                     }
+                    if(items.size()==0){
+                        System.out.println("NONE");
+                    }
                 }
                 case "OVERDUE" -> {
                     List<Loan> loans = library.getOverdue();
@@ -88,6 +94,9 @@ public class Main {
                             loan.calcFine(library.getToday())
                         );
                     }
+                    if(loans.size()==0){
+                        System.out.println("NONE");
+                    }
                 }
                 case "INVENTORY" -> {
                     List<LibraryItem>items = library.getInventory();
@@ -96,6 +105,9 @@ public class Main {
                             item.getType()+"|"+
                             library.getItemStatus(item)
                         );
+                    }
+                    if(items.size()==0){
+                        System.out.println("NONE");
                     }
                 }
             }
