@@ -6,7 +6,7 @@ public class Book extends LibraryItem implements Borrowable{
     }
     @Override
     public String getType(){
-        return "Book";
+        return "BOOK";
     }
     public String getAuthor(){
         return author;

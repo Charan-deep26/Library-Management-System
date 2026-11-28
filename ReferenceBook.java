@@ -6,7 +6,7 @@ public class ReferenceBook extends LibraryItem{
     }
     @Override
     public String getType(){
-        return "ReferenceBook";
+        return "REFERENCE";
     }
     public String getAuthor(){
         return author;
